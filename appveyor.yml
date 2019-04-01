@@ -9,6 +9,8 @@ before_build:
 build:
   project: OpenParrot.sln
   verbosity: minimal
+after_build:
+  7z a OpenParrotTest.zip build\x64\*.dll build\x64\*.exe build\Win32\*.dll build\Win32\*.exe
 artifacts:
 - path: build\bin\release\
   name: OpenParrot$(platform)
